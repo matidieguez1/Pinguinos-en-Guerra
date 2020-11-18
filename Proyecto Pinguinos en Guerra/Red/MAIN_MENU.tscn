@@ -1,0 +1,308 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fuentes/Chunk Five Print.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Red/MAIN_MENU.gd" type="Script" id=2]
+[ext_resource path="res://fuentes/ChunkFive-Regular.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 94
+outline_size = 4
+outline_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+extra_spacing_char = 1
+extra_spacing_space = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.835294, 0.678431, 0.380392, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 67
+outline_size = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 56
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 72
+outline_size = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.160784, 0.482353, 0.168627, 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 39
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control" groups=[
+"Menu",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.6832
+margin_top = 8.48157
+margin_right = 3.68323
+margin_bottom = 8.48157
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 90.8829
+margin_bottom = 162.883
+custom_fonts/font = SubResource( 1 )
+text = "Pinguinos en guerra"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main Panel" type="Panel" parent="."]
+margin_left = 235.189
+margin_top = 329.484
+margin_right = 1036.19
+margin_bottom = 610.484
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Panel"]
+margin_left = 5.87256
+margin_right = 803.873
+margin_bottom = 278.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Panel/VBoxContainer"]
+margin_top = 98.0
+margin_right = 798.0
+margin_bottom = 179.0
+
+[node name="Label" type="Label" parent="Main Panel/VBoxContainer/HBoxContainer"]
+margin_right = 347.0
+margin_bottom = 81.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.352941, 0.643137, 0.0313726, 1 )
+text = "Nombre :   "
+
+[node name="LineEdit" type="LineEdit" parent="Main Panel/VBoxContainer/HBoxContainer"]
+margin_left = 351.0
+margin_right = 751.0
+margin_bottom = 81.0
+grow_horizontal = 2
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = SubResource( 4 )
+max_length = 12
+
+[node name="Create" type="Button" parent="Main Panel/VBoxContainer"]
+visible = false
+margin_top = 86.0
+margin_right = 798.0
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.352941, 0.643137, 0.0313726, 1 )
+action_mode = 0
+text = "Crear una partida"
+flat = true
+
+[node name="Join" type="Button" parent="Main Panel/VBoxContainer"]
+visible = false
+margin_top = 135.0
+margin_right = 798.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.286275, 0.643137, 0.0313726, 1 )
+action_mode = 0
+text = "Unirse a una partida"
+flat = true
+
+[node name="SERVER PANEL" type="Panel" parent="."]
+visible = false
+margin_left = 239.0
+margin_top = 334.426
+margin_right = 1150.0
+margin_bottom = 750.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SERVER PANEL"]
+margin_left = 6.0
+margin_right = 804.0
+margin_bottom = 273.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cant_Players2" type="Button" parent="SERVER PANEL/VBoxContainer"]
+margin_right = 880.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "2 Jugadores Gratuito"
+flat = true
+
+[node name="Cant_Players3" type="Button" parent="SERVER PANEL/VBoxContainer"]
+margin_top = 97.0
+margin_right = 880.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "3 Jugadores (bloqueado)"
+flat = true
+
+[node name="Cant_Players4" type="Button" parent="SERVER PANEL/VBoxContainer"]
+margin_top = 194.0
+margin_right = 880.0
+margin_bottom = 287.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "4 Jugadores (bloqueado)"
+flat = true
+
+[node name="debloquearModo2v2" type="Button" parent="SERVER PANEL/VBoxContainer"]
+margin_top = 291.0
+margin_right = 880.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "Desbloquear Modo 2v2"
+flat = true
+
+[node name="CLIENT PANEL" type="Panel" parent="."]
+visible = false
+margin_left = 255.285
+margin_top = 342.892
+margin_right = 1150.0
+margin_bottom = 618.892
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CLIENT PANEL"]
+margin_left = 6.0
+margin_right = 804.0
+margin_bottom = 273.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="Label" parent="CLIENT PANEL/VBoxContainer"]
+margin_top = 44.0
+margin_right = 798.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+text = "Esperando Servidor..."
+align = 1
+
+[node name="START CLIENT" type="Button" parent="CLIENT PANEL/VBoxContainer"]
+margin_top = 135.0
+margin_right = 798.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+disabled = true
+action_mode = 0
+text = "OK"
+flat = true
+
+[node name="PLAYERS PANEL" type="Panel" parent="."]
+visible = false
+margin_left = 236.594
+margin_top = 307.818
+margin_right = 1044.59
+margin_bottom = 630.818
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PLAYERS PANEL"]
+margin_left = 6.0
+margin_right = 804.0
+margin_bottom = 278.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2_Status" type="Button" parent="PLAYERS PANEL/VBoxContainer"]
+margin_right = 798.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "Configurar P2"
+flat = true
+
+[node name="Player3_Status" type="Button" parent="PLAYERS PANEL/VBoxContainer"]
+margin_top = 97.0
+margin_right = 798.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "Configurar P3"
+flat = true
+
+[node name="Player4_Status" type="Button" parent="PLAYERS PANEL/VBoxContainer"]
+margin_top = 194.0
+margin_right = 798.0
+margin_bottom = 287.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+action_mode = 0
+text = "Configurar P4"
+flat = true
+
+[node name="START SERVER" type="Button" parent="PLAYERS PANEL/VBoxContainer"]
+margin_top = 291.0
+margin_right = 798.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.0313726, 0.0980392, 0.643137, 1 )
+disabled = true
+action_mode = 0
+text = "..."
+flat = true
+
+[node name="BotonAtras" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "ATRAS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="Main Panel/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Main Panel/VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="Main Panel/VBoxContainer/Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Main Panel/VBoxContainer/Join" to="." method="_on_Join_pressed"]
+[connection signal="pressed" from="SERVER PANEL/VBoxContainer/Cant_Players2" to="." method="_on_Cant_Players2_pressed"]
+[connection signal="pressed" from="SERVER PANEL/VBoxContainer/Cant_Players3" to="." method="_on_Cant_Players3_pressed"]
+[connection signal="pressed" from="SERVER PANEL/VBoxContainer/Cant_Players4" to="." method="_on_Cant_Players4_pressed"]
+[connection signal="pressed" from="SERVER PANEL/VBoxContainer/debloquearModo2v2" to="." method="_on_Cant_Players4_pressed"]
+[connection signal="pressed" from="CLIENT PANEL/VBoxContainer/START CLIENT" to="." method="_on_START_CLIENT_pressed"]
+[connection signal="pressed" from="PLAYERS PANEL/VBoxContainer/Player2_Status" to="." method="_on_Player2_Status_pressed"]
+[connection signal="pressed" from="PLAYERS PANEL/VBoxContainer/Player3_Status" to="." method="_on_Player3_Status_pressed"]
+[connection signal="pressed" from="PLAYERS PANEL/VBoxContainer/Player4_Status" to="." method="_on_Player4_Status_pressed"]
+[connection signal="pressed" from="PLAYERS PANEL/VBoxContainer/START SERVER" to="." method="_on_START_SERVER_pressed"]
+[connection signal="pressed" from="BotonAtras" to="." method="_on_BotonAtras_pressed"]

@@ -1,0 +1,160 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Recursos/pinguinos/PinguinoFrente/PinguinoFrenteGris.png" type="Texture" id=1]
+[ext_resource path="res://Recursos/pinguinos/PinguinoFrente/PinguinoFrenteNaranja.png" type="Texture" id=2]
+[ext_resource path="res://fuentes/Fuentee.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Recursos/pinguinos/PinguinoFrente/PinguinoFrenteRosa.png" type="Texture" id=4]
+[ext_resource path="res://Recursos/pinguinos/PinguinoFrente/PinguinoFrenteVerde.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/EscenaSeleccion.gd" type="Script" id=6]
+[ext_resource path="res://Escenas/Menu/Botones/BotonSeleccion.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Recursos/fondos/31314.jpg" type="Texture" id=8]
+[ext_resource path="res://Escenas/Menu/CambioEscena.tscn" type="PackedScene" id=11]
+
+[node name="EscenaSeleccion" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1286.0
+margin_bottom = 730.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 1280, 104 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Atras" type="Button" parent="HBoxContainer2"]
+margin_right = 102.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 93 )
+custom_fonts/font = ExtResource( 3 )
+text = "ATRAS"
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_left = 106.0
+margin_top = 11.0
+margin_right = 1236.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 1130, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "SELECCIONA TU PERSONAJE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -200.0
+margin_right = 12.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 1280, 400 )
+rect_scale = Vector2( 0.990137, 1.00522 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amarillo" parent="HBoxContainer" instance=ExtResource( 7 )]
+margin_right = 320.0
+margin_bottom = 400.0
+icon = ExtResource( 2 )
+scene_to_load = "res://Escenas/Mapa1Amarillo.tscn"
+
+[node name="Rosa" parent="HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 324.0
+margin_right = 644.0
+margin_bottom = 400.0
+icon = ExtResource( 4 )
+scene_to_load = "res://Escenas/Mapa1Rosa.tscn"
+
+[node name="Verde" parent="HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 648.0
+margin_right = 968.0
+margin_bottom = 400.0
+icon = ExtResource( 5 )
+scene_to_load = "res://Escenas/Mapa1Verde.tscn"
+
+[node name="Gris" parent="HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 972.0
+margin_right = 1292.0
+margin_bottom = 400.0
+icon = ExtResource( 1 )
+scene_to_load = "res://Escenas/Mapa1.tscn"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -216.0
+margin_bottom = 6.10352e-05
+rect_min_size = Vector2( 1280, 200 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+margin_left = 14.0
+margin_top = 67.0
+margin_right = 324.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 310, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "AMARILLO"
+
+[node name="Label2" type="Label" parent="HBoxContainer3"]
+margin_left = 328.0
+margin_top = 67.0
+margin_right = 638.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 310, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "ROSA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="HBoxContainer3"]
+margin_left = 642.0
+margin_top = 67.0
+margin_right = 952.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 310, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "VERDE"
+
+[node name="Label4" type="Label" parent="HBoxContainer3"]
+margin_left = 956.0
+margin_top = 67.0
+margin_right = 1266.0
+margin_bottom = 149.0
+rect_min_size = Vector2( 310, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "GRIS"
+
+[node name="CambioEscena" parent="." instance=ExtResource( 11 )]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 1280, 720 )
+rect_scale = Vector2( 13.9108, 47.4277 )
+[connection signal="pressed" from="HBoxContainer2/Atras" to="." method="_on_Atras_pressed"]
+[connection signal="pressed" from="HBoxContainer/Amarillo" to="." method="_on_Amarillo_pressed"]
+[connection signal="pressed" from="HBoxContainer/Rosa" to="." method="_on_Rosa_pressed"]
+[connection signal="pressed" from="HBoxContainer/Verde" to="." method="_on_Verde_pressed"]
+[connection signal="pressed" from="HBoxContainer/Gris" to="." method="_on_Gris_pressed"]
+[connection signal="fade_finished" from="CambioEscena" to="." method="_on_CambioEscena_fade_finished"]

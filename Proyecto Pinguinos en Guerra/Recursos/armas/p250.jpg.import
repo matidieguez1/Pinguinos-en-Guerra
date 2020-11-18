@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/p250.jpg-96de372b81641df458df4562cf4553c4.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Recursos/armas/p250.jpg"
+dest_files=[ "res://.import/p250.jpg-96de372b81641df458df4562cf4553c4.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
